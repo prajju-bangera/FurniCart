@@ -1,0 +1,129 @@
+/* Global styles */
+.tracking-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Order Summary */
+.order-summary {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.order-details {
+  flex-grow: 1;
+}
+
+.order-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+
+h2.total {
+  color: #d81b60;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Stepper */
+.order-status {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.date {
+  font-size: 12px;
+  color: #777;
+  font-weight: bold;
+}
+
+.MuiStepLabel-label {
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+/* Popup Dialogs */
+.MuiDialog-paper {
+  border-radius: 15px !important;
+}
+
+.feedback-dialog {
+  padding: 20px;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  gap: 10px;
+  margin-bottom: 10px;
+  width: 100%; /* Ensure full width */
+}
+
+.green-button {
+  background: #4caf50 !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.green-button:hover {
+  background: #388e3c !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .order-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cart-item-image {
+    margin-bottom: 10px;
+  }
+}
+

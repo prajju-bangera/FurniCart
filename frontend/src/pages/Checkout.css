@@ -1,0 +1,463 @@
+/* General Container */
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+
+/* Checkout Content - Two Columns */
+.checkout-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+/* Left Side - Order Summary */
+.order-summary {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1;
+  max-width: 323px;
+  max-height: 70%;
+  
+  /* Add scrollbar */
+  overflow-y: auto;  /* Enables vertical scrolling */
+  overflow-x: hidden; /* Hides horizontal scroll */
+}
+.order-summary ::-webkit-scrollbar{
+  width: 8px;
+}
+  .order-summary h2, .order-summary h3 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .order-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  .order-details {
+    flex-grow: 1;
+  }
+  
+  .product-name {
+    font-weight: bold;
+  }
+  
+  .total-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+
+/* Right Side - Checkout Form */
+.checkout-details {
+    flex: 2;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+/* Order Summary Styling */
+
+/* Checkout Boxes */
+.checkout-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 200px}
+
+.checkout-box h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.cart-item-image {
+    width: 150px;   /* Adjust width */
+    height: 150px;  /* Adjust height */
+      /* Ensure image fits well */
+    border-radius: 8px;  /* Optional: Rounded corners */
+    margin-right: 10px;  /* Space between image & text */
+  }
+  .order-details .product-name{
+    font-size: 25px;
+  }
+.order-summary h1,h2,h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+.checkout-box input[type="text"],
+.checkout-box input[type="email"],
+.checkout-box input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.checkout-box input[type="text"]:focus,
+.checkout-box input[type="email"]:focus,
+.checkout-box input[type="tel"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Checkbox Label */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.order-note {
+    background-color: #ffe6e6;  /* Light red background */
+    border-left: 5px solid red; /* Red left border for emphasis */
+    padding: 10px;
+    margin: 15px 0;
+    color: #d9534f; /* Red text color */
+    font-weight: bold;
+    font-size: 13px;
+  }
+  
+  .order-note h3 {
+    color: red;  /* Heading in red */
+    margin-bottom: 5px;
+  }
+  
+  .order-note ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+  }
+  
+  .order-note li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+.checkbox-label input {
+    margin-right: 5px;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.submit-btn, .next-btn, .back-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.submit-btn {
+    background: #28a745;
+    color: #fff;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.next-btn {
+    background: #007bff;
+    color: #fff;
+}
+
+.next-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.next-btn:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+.back-btn {
+    background: #dc3545;
+    color: #fff;
+}
+
+.back-btn:hover {
+    background: #b02a37;
+}
+
+/* Payment Details Section */
+.payment-details {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Payment Title */
+.payment-details h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Payment Option Boxes */
+.payment-option {
+    display: flex;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Hover Effect */
+.payment-option:hover {
+    border-color: #007bff;
+}
+
+/* Payment Checkbox Styling */
+.payment-option input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Checkbox Checked Style */
+.payment-option input[type="checkbox"]:checked {
+    border-color: #007bff;
+    background-color: #007bff;
+}
+
+/* Checkbox Checkmark */
+.payment-option input[type="checkbox"]:checked::before {
+    content: "✔";
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Payment Option Text */
+.payment-option label {
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Stepper Container */
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: gray;
+    font-weight: bold;
+  }
+  
+  .step.active {
+    color: black;
+  }
+  
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: lightgray;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .step.active .step-number {
+    background: blue;
+    color: white;
+  }
+  
+  .step-line {
+    flex-grow: 1;
+    height: 2px;
+    background: lightgray;
+    margin: 0 10px;
+  }
+  
+  .step-line.filled {
+    background: blue;
+  }
+  
+  .checkout-box {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .input-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .next-btn,
+  .back-btn,
+  .submit-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .next-btn {
+    background-color: blue;
+    color: white;
+  }
+  
+  .back-btn {
+    background-color: gray;
+    color: white;
+  }
+  
+  .submit-btn {
+    background-color: green;
+    color: white;
+  }
+  .stepper {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    font-size: 18px;
+    font-weight: bold;
+    color: #aaa;
+    position: relative;
+  }
+  
+  .step.active {
+    color: #007bff;
+  }
+  
+  .step.active::after {
+    content: "✓";
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    color: green;
+  }
+
+  .qr-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+  }
+  
+  .qr-popup h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .qr-popup img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .qr-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .qr-close {
+    margin-top: 10px;
+    cursor: pointer;
+    background: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
