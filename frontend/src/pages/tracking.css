@@ -1,129 +1,147 @@
-/* Global styles */
 .tracking-container {
-  max-width: 800px;
-  margin: 20px auto;
+  text-align: center;
+  max-width: 500px;
+  margin: 50px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-/* Order Summary */
-.order-summary {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 10px;
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
-.order-summary ul {
-  list-style: none;
-  padding: 0;
-}
-
-.order-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+input {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 70%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-.cart-item-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-  margin-right: 15px;
-  object-fit: cover;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-.order-details {
-  flex-grow: 1;
-}
-
-.order-details p {
-  margin: 5px 0;
-  font-size: 14px;
+button:hover {
+  background-color: #218838;
 }
 
 h3 {
-  font-size: 16px;
-  color: #555;
-  margin-top: 10px;
-}
-
-h2.total {
-  color: #d81b60;
   font-size: 18px;
-  font-weight: bold;
+  margin-top: 20px;
+  opacity: 0; /* Start with text invisible */
+  animation: fadeIn 2s forwards; /* Apply fade-in animation */
 }
 
-/* Stepper */
-.order-status {
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start with no opacity */
+  }
+  100% {
+    opacity: 1; /* Fade to fully visible */
+  }
+}
+
+/* Truck animation */
+.truck-animation {
+  margin-top: 20px;
+  position: relative;
+  height: 60px;  /* Adjust based on truck image height */
+}
+
+.truck {
+  position: absolute;
+  bottom: 0;
+  width: 80px;  /* Adjust to truck image size */
+  height: auto;
+  animation: truckMove 5s infinite linear;
+}
+
+@keyframes truckMove {
+  0% {
+    left: -100px;  /* Start off-screen */
+  }
+  50% {
+    left: 80%;  /* Move to near the right edge */
+  }
+  100% {
+    left: 100%;  /* End off-screen */
+  }
+}
+
+
+
+
+.tracking-container {
+  text-align: center;
   padding: 20px;
-  background: #f9f9f9;
+}
+
+.tracking-bar-container {
+  margin-top: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.tracking-bar {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 10px;
+  width: 100%;
+}
+
+.progress {
+  background-color: #4caf50;
+  height: 100%;
   border-radius: 10px;
 }
 
-.date {
-  font-size: 12px;
-  color: #777;
-  font-weight: bold;
-}
-
-.MuiStepLabel-label {
-  font-size: 14px !important;
-  font-weight: bold !important;
-}
-
-/* Popup Dialogs */
-.MuiDialog-paper {
-  border-radius: 15px !important;
-}
-
-.feedback-dialog {
-  padding: 20px;
-}
-
-.rating-container {
+.tracking-status {
+  margin-top: 10px;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  gap: 10px;
-  margin-bottom: 10px;
-  width: 100%; /* Ensure full width */
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
-.green-button {
-  background: #4caf50 !important;
-  color: white !important;
+.tracking-status span {
+  font-size: 14px;
+  color: #888;
+}
+
+.tracking-status .active {
   font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: 0.3s;
+  color: #4caf50;
 }
 
-.green-button:hover {
-  background: #388e3c !important;
+.truck-container {
+  margin-top: 20px;
+  position: relative;
+  height: 100px; /* Adjust the height */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .order-item {
-    flex-direction: column;
-    text-align: center;
+.truck {
+  width: 80px; /* Adjust the size */
+  position: absolute;
+  bottom: 0;
+  animation: truckAnimation 5s infinite linear;
+}
+
+@keyframes truckAnimation {
+  0% {
+    left: -100px; /* Start from left off-screen */
   }
-
-  .cart-item-image {
-    margin-bottom: 10px;
+  100% {
+    left: 100%; /* Move to the right off-screen */
   }
 }
-

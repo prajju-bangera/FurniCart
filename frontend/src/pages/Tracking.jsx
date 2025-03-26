@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./tracking.css"
 
 const ProductTracking = () => {
   const [orderId, setOrderId] = useState("");
@@ -9,7 +10,7 @@ const ProductTracking = () => {
   const handleTrack = async () => {
     try {
         console.log(`Fetching order status for: ${orderId}`);
-        const response = await axios.get(`http://localhost:8500/api/track/${orderId}`); // ✅ Ensure correct API path
+        const response = await axios.get(`http://localhost:8500/api/track/${orderId}`); // Ensure correct API path
 
         console.log("Response:", response.data);
         
@@ -25,8 +26,20 @@ const ProductTracking = () => {
         setStatus(null);
         setError("Order not found. Please check the Order ID.");
     }
-};
+  };
 
+  const getProgressWidth = () => {
+    switch (status) {
+      case "Placed":
+        return "33%";
+      case "Shipped":
+        return "66%";
+      case "Delivered":
+        return "100%";
+      default:
+        return "0%";
+    }
+  };
 
   return (
     <div className="tracking-container">
@@ -38,8 +51,33 @@ const ProductTracking = () => {
         onChange={(e) => setOrderId(e.target.value)}
       />
       <button onClick={handleTrack}>Track</button>
+
       {status && <h3>Status: {status}</h3>}
       {error && <h3 style={{ color: "red" }}>{error}</h3>}
+
+      {/* Progress Bar */}
+      <div className="tracking-bar-container">
+        <div className="tracking-bar">
+          <div
+            className="progress"
+            style={{ width: getProgressWidth() }}
+          ></div>
+        </div>
+        <div className="tracking-status">
+          <span className={status === "Placed" ? "active" : ""}>Placed</span>
+          <span className={status === "Shipped" ? "active" : ""}>Shipped</span>
+          <span className={status === "Delivered" ? "active" : ""}>Delivered</span>
+        </div>
+      </div>
+
+      {/* Truck Image */}
+      <div className="truck-container">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/713/713311.png"
+          alt="Truck"
+          className="truck"
+        />
+      </div>
     </div>
   );
 };
