@@ -81,26 +81,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-app.get("/track/:orderId", async (req, res) => {
-  try {
-    const { orderId } = req.params;
-    console.log("🔍 Searching for Order ID:", orderId);
-
-    // Fetch the order from the database
-    const order = await Order.findOne({ orderId: orderId.toString() });
-
-    if (!order) {
-      console.log("❌ Order not found in DB");
-      return res.status(404).json({ message: "Order not found" });
-    }
-
-    console.log("✅ Order found:", order);
-    res.json({ orderId: order.orderId, status: order.status });
-  } catch (error) {
-    console.error("❌ Error fetching order:", error);
-    res.status(500).json({ message: "Server error", error });
-  }
-});
 
 
 // ✅ Use router with correct API prefix
